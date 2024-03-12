@@ -1,23 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import Countdown from 'react-countdown';
+import background from "./mba-taylor.jpg";
 
 function App() {
+  const Completionist = () => <span>00:00:00</span>;
+
+  // Renderer callback with condition
+  const renderer = ({ hours, minutes, seconds, completed }) => {
+    if (completed) {
+      return <Completionist />;
+    } else {
+      return <span style={{fontSize: "170px", color: 'white', display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      height: "100%",
+      marginBottom: "-500px"
+      }}>
+        {hours}:{minutes}:{seconds}
+      </span>;
+    }
+  };
+    const myStyle = {
+      backgroundImage: `url(${background})`,
+      backgroundPosition: 'center',
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      width: '100vw',
+      height: '100vh',
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div style={myStyle}>
+        <Countdown
+          date={Date.now() + 86400000}
+          intervalDelay={1}
+          precision={3}
+          renderer={renderer}
+        />
+      </div>
+     
     </div>
   );
 }
