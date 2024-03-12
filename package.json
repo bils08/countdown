@@ -1,5 +1,6 @@
 {
-  "name": "my-app",
+  "name": "countdown",
+  "homepage": "https://bils08.github.io/countdown/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -17,7 +18,9 @@
     "start": "PORT=3006 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build" 
   },
   "eslintConfig": {
     "extends": [
