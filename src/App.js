@@ -44,7 +44,7 @@ function App() {
           {/* <div  style={{fontSize: "80px", color: 'white', 
           }}> hours minutes seconds</div> */}
           <Countdown
-            date={Date.now() + 10000}
+            date={Date.now() + 86400000}
             intervalDelay={1}
             precision={3}
             renderer={renderer}
