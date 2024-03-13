@@ -16,12 +16,8 @@ function App() {
       return <Completionist />;
     } else {
       return <span style={{fontSize: "120px", color: 'white', 
-      // display: "flex",
-      // alignItems: "center",
-      // justifyContent: "center",
-      // height: "10%",
       }}>
-        {hours}:{minutes}:{seconds}
+        {hours} : {minutes} : {seconds}
       </span>;
     }
   };
@@ -40,18 +36,13 @@ function App() {
         <div style={{height: '10%'}}></div>
         <div style={{ 
           display: 'flex',
-          // justifyContent: 'space-between',
           flexDirection:'column',
           alignItems: "center",
           justifyContent: "center",
           height: "100%",
           }}>
-          <div  style={{fontSize: "100px", color: 'white', 
-          // display: "flex",
-          // alignItems: "center",
-          // justifyContent: "center",
-          // height: "100%"
-          }}> hours minutes seconds</div>
+          {/* <div  style={{fontSize: "80px", color: 'white', 
+          }}> hours minutes seconds</div> */}
           <Countdown
             date={Date.now() + 86400000}
             intervalDelay={1}
@@ -60,6 +51,8 @@ function App() {
             autoStart={false}
             ref={ref}
           />
+          <div  style={{fontSize: "36px", color: 'white', marginLeft: "28px"
+          }}> HOURS &nbsp; &nbsp; &nbsp; &nbsp;  MINUTES &nbsp; &nbsp; &nbsp; SECONDS</div>
           </div>
       </div>
     </div>
