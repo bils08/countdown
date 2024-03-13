@@ -13,7 +13,6 @@ function App() {
       alignItems: "center",
       justifyContent: "center",
       height: "100%",
-      marginBottom: "-500px"
       }}>
         {hours}:{minutes}:{seconds}
       </span>;
@@ -28,8 +27,9 @@ function App() {
       height: '100vh',
   };
   return (
-    <div className="App">
+    <div className="App" style={{overflow: "hidden"}}>
       <div style={myStyle}>
+        <div style={{height: "50px"}}></div>
         <Countdown
           date={Date.now() + 86400000}
           intervalDelay={1}
@@ -37,7 +37,6 @@ function App() {
           renderer={renderer}
         />
       </div>
-     
     </div>
   );
 }
