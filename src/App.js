@@ -3,7 +3,7 @@ import background from "./mba-taylor.jpg";
 import { useRef } from "react";
 
 function App() {
-  const Completionist = () => <span>00:00:00</span>;
+  const Completionist = () => <span style={{fontSize: "120px", color: 'white'}}>00 : 00 : 00</span>;
   const ref = useRef();
 
   const handleStart = (e) => {
@@ -44,7 +44,7 @@ function App() {
           {/* <div  style={{fontSize: "80px", color: 'white', 
           }}> hours minutes seconds</div> */}
           <Countdown
-            date={Date.now() + 86400000}
+            date={Date.now() + 10000}
             intervalDelay={1}
             precision={3}
             renderer={renderer}
