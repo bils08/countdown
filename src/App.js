@@ -15,10 +15,11 @@ function App() {
     if (completed) {
       return <Completionist />;
     } else {
-      return <span style={{fontSize: "170px", color: 'white', display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      height: "100%",
+      return <span style={{fontSize: "120px", color: 'white', 
+      // display: "flex",
+      // alignItems: "center",
+      // justifyContent: "center",
+      // height: "10%",
       }}>
         {hours}:{minutes}:{seconds}
       </span>;
@@ -36,15 +37,30 @@ function App() {
   return (
     <div className="App" style={{overflow: "hidden"}}>
       <div style={myStyle} onClick={handleStart}>
-        <div style={{height: "50px"}}></div>
-        <Countdown
-          date={Date.now() + 86400000}
-          intervalDelay={1}
-          precision={3}
-          renderer={renderer}
-          autoStart={false}
-          ref={ref}
-        />
+        <div style={{height: '10%'}}></div>
+        <div style={{ 
+          display: 'flex',
+          // justifyContent: 'space-between',
+          flexDirection:'column',
+          alignItems: "center",
+          justifyContent: "center",
+          height: "100%",
+          }}>
+          <div  style={{fontSize: "100px", color: 'white', 
+          // display: "flex",
+          // alignItems: "center",
+          // justifyContent: "center",
+          // height: "100%"
+          }}> hours minutes seconds</div>
+          <Countdown
+            date={Date.now() + 86400000}
+            intervalDelay={1}
+            precision={3}
+            renderer={renderer}
+            autoStart={false}
+            ref={ref}
+          />
+          </div>
       </div>
     </div>
   );
