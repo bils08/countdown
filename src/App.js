@@ -1,8 +1,14 @@
 import Countdown from 'react-countdown';
 import background from "./mba-taylor.jpg";
+import { useRef } from "react";
 
 function App() {
   const Completionist = () => <span>00:00:00</span>;
+  const ref = useRef();
+
+  const handleStart = (e) => {
+    ref.current?.start();
+  }
 
   // Renderer callback with condition
   const renderer = ({ hours, minutes, seconds, completed }) => {
@@ -26,15 +32,18 @@ function App() {
       width: '100vw',
       height: '100vh',
   };
+
   return (
     <div className="App" style={{overflow: "hidden"}}>
-      <div style={myStyle}>
+      <div style={myStyle} onClick={handleStart}>
         <div style={{height: "50px"}}></div>
         <Countdown
           date={Date.now() + 86400000}
           intervalDelay={1}
           precision={3}
           renderer={renderer}
+          autoStart={false}
+          ref={ref}
         />
       </div>
     </div>
